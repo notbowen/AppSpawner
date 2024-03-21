@@ -45,7 +45,8 @@ class AppAdapter(context: Context) : RecyclerView.Adapter<AppAdapter.ViewHolder>
         return ViewHolder(view)
     }
 
-    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView), View.OnClickListener {
+    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView),
+        View.OnClickListener {
         val textView: TextView = itemView.findViewById(R.id.appTextView)
         val img: ImageView = itemView.findViewById(R.id.appImageView)
 
@@ -57,7 +58,8 @@ class AppAdapter(context: Context) : RecyclerView.Adapter<AppAdapter.ViewHolder>
             val pos = layoutPosition
             val context = v?.context
 
-            val launchIntent = context?.packageManager?.getLaunchIntentForPackage(appsList[pos].packageName.toString())
+            val launchIntent =
+                context?.packageManager?.getLaunchIntentForPackage(appsList[pos].packageName.toString())
             context?.startActivity(launchIntent)
         }
     }
