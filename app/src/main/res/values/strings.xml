@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">AppSpawner</string>
     <string name="app_icon">App Icon</string>
+    <string name="loading_apps">Loading apps...</string>
 </resources>
